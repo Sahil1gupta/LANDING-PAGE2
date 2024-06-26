@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The XYZ</title>
+</head>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    #main{
+        /* background-color: pink; */
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100%;
+        padding: 180px 150px 0px 80px;
+    }
+    #left{
+        /* background-color: red; */
+    }
+
+    #left h1{
+        font-family:'Courier New', Courier, monospace;
+        font-size: 5vw;
+        font-weight: 700;
+    }
+    #left{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+    }
+    #left  .left-bottom .colors{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: fit-content;
+        background-color: white;
+        padding:10px 20px;
+        border-radius: 20px;
+        border: 1px solid black;
+        margin-bottom:2.5em ;
+    }
+    #left  .left-bottom .colors .color1,.color2{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        
+    }
+    #left  .left-bottom .colors p{
+        font-size: 1.2vw;
+    }
+    #left  .left-bottom .colors .color1{
+        background-color: rosybrown;
+        margin-left: 10px;
+    }
+    #left  .left-bottom .colors .color2{
+        background-color:burlywood;
+    }
+
+    #left  .left-bottom p:nth-last-child(1){ 
+        width: 50%;
+        padding-bottom: 20px;
+       
+    }
+    #right{
+/* background-color: blue; */
+position: relative;
+padding: 20px 100px 0px 100px;
+    }
+
+    #right .right-upper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+    }
+    #right .right-upper h2{ 
+        font-weight: 800;
+    }
+    #right .right-upper h3{
+        font-size:1.2vw;
+        font-weight: 400;
+    }
+    #right img{
+        width: 100%;
+        height: 96%;
+        object-fit: cover;
+    
+    }
+    #rotated{
+        position:absolute;
+        /* background-color: tomato; */
+        font-size: 2vw;
+        font-weight: 500;
+        transform: rotate(-90deg);
+        transform-origin: 0 0;
+        left:10px;
+        bottom:10px;
+    }
+
+    #add-to-tag{
+        position: absolute;
+        top: 20%;
+        right: -10px;
+        background-color: black;
+        color: white;
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2vw;
+        font-weight: 500;
+    }
+    #add-to-tag:hover{
+        cursor: pointer;
+    }
+
+
+
+    
+    @media (max-width:600px){
+        #main{
+            padding:30px;
+            grid-template-columns: 100%;
+            grid-template-rows: none;
+           /*  grid-template-rows: 0; */
+        }
+        #left h1{
+            
+    font-size: 10vw;
+    font-weight: 700;
+    line-height: 10vw;
+    margin-bottom: 20px
+        }
+
+        #left{
+        display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    align-items: flex-start;
+}
+
+
+    #left .left-bottom .colors {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    background-color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin-bottom: 1em;
+}
+
+#left .left-bottom .colors p {
+    font-size: 2.5vw;
+}
+#left .left-bottom .colors .color2 {
+    background-color: burlywood;
+    margin-left: 2px;
+}
+
+#right .right-upper h3 {
+    font-size: 3.5vw;
+    font-weight: 800;
+}
+
+#left .left-bottom p:nth-last-child(1) {
+    width: 100%;
+    padding-bottom: 20px;
+    font-size: 3vw;
+}
+#right {
+        /* background-color: blue; */
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column-reverse;
+        padding: 50px 0px ;
+    }
+
+#right .right-upper h3 {
+    font-size: 2.5vw;
+    font-weight: 400;
+    font-weight: 800;
+}
+#right img {
+    width: 100%;
+    height: 65%;
+    object-fit: cover;
+}
+
+#add-to-tag {
+    position: absolute;
+    top: 0%;
+    right: -27px;
+    background-color: black;
+    color: white;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+    font-weight: 500;
+}
+
+#rotated {
+    position: absolute;
+    /* background-color: tomato; */
+    font-size: 5vw;
+    font-weight: 500;
+    transform: rotate(0deg);
+    transform-origin: 0 0;
+    left: 0px;
+    top: 2%;
+}
+    }
+   
+</style>
+<body>
+    
+    <div id="main">
+        <div id="left">
+            <h1>a cotton <br>weave.</h1>
+            <div class="left-bottom">
+                <div class="colors">
+                    <p>colors</p>
+                    <div class="color1"></div>
+                    <div class="color2"></div>
+                </div>
+                <h2>Details</h2>
+               <p>Our cotton weave is a soft, breathable fabric that is perfect for all seasons. It is a versatile fabric that can be used for a variety of projects,Whether you are making a dress, a quilt, or a set of curtains, our cotton weave is the perfect choice.</p>
+            </div>
+        </div>
+        <div id="right">
+            <div class="right-upper">
+                <h2>$488</h2>
+                <h3>Rating ⭐️ ⭐️ ⭐️ ⭐️ </h3>
+            </div>
+
+            <img src="model.jpg"/>
+            <h2 id="rotated">Cotton twill cap</h2>
+            <div id="add-to-tag">
+                <h3>Add to tag</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
